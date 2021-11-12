@@ -1,0 +1,54 @@
+{
+  "name": "propuska-official",
+  "version": "1.0",
+  "description": "propuska-official",
+  "main": "index.php",
+  "scripts": {
+    "test": "editorconfig-checker", 
+    "clear_r": "ssh manist1h_ruvick@manist1h.beget.tech \"rm propuska-mkad-official.ru//public_html/wp-content/themes/mkad/*.*\"",
+    "send_r": "scp -C *.php *.png *.css manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_ms": "scp -C *.css manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_head": "scp -C header.php manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_cat": "scp -C category.php manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_singl": "scp -C single.php manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_index": "scp -C index.php manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_func": "scp -C functions.php manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_futt": "scp -C footer.php manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "mk_part_carbon": "ssh manist1h_ruvick@manist1h.beget.tech \"mkdir -p propuska-mkad-official.ru//public_html/wp-content/themes/mkad/inc\"",
+    "send_carbon": "scp -C -r inc manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "send_carbon_fild": "scp -C -r inc/custom-fields-options manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/inc/",
+    "mk_part_dir": "ssh manist1h_ruvick@manist1h.beget.tech \"mkdir -p propuska-mkad-official.ru//public_html/wp-content/themes/mkad/template-parts\"",
+    "send_part": "scp -C -r template-parts manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "mk_part_img": "ssh manist1h_ruvick@manist1h.beget.tech \"mkdir -p propuska-mkad-official.ru//public_html/wp-content/themes/mkad/img\"",
+    "send_img": "scp -r img manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "mk_part_css": "ssh manist1h_ruvick@manist1h.beget.tech \"mkdir -p propuska-mkad-official.ru//public_html/wp-content/themes/mkad/css\"",
+    "send_css": "scp -C -r css manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "mk_part_js": "ssh manist1h_ruvick@manist1h.beget.tech \"mkdir -p propuska-mkad-official.ru//public_html/wp-content/themes/mkad/js\"",
+    "send_js": "scp -r js manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "mk_part_fonts": "ssh manist1h_ruvick@manist1h.beget.tech \"mkdir -p propuska-mkad-official.ru//public_html/wp-content/themes/mkad/fonts\"",
+    "send_fonts": "scp -C -r manist1h_ruvick@manist1h.beget.tech:propuska-mkad-official.ru//public_html/wp-content/themes/mkad/",
+    "group_media": "group-css-media-queries css/main.css css/g_main.css",
+    "send_all": "npm run send_r & npm run send_css & npm run send_part & npm run send_img & npm run send_image & npm run send_js & npm run send_fonts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruvick/propuska-official_wp.git"
+  },
+  "keywords": [
+    "wp",
+    "WordPress"
+  ],
+  "author": "ruvick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruvick/propuska-official_wp/issues"
+  },
+  "homepage": "https://github.com/ruvick/propuska-official_wp#readme",
+  "dependencies": {
+    "editorconfig-checker": "^3.1.0",
+    "group-css-media-queries": "^1.4.1",
+    "postcss-cli": "^7.1.2",
+    "postcss-csso": "^4.0.0",
+    "postcss-import": "^12.0.1"
+  }
+}

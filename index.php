@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area"> 
 		<main id="main" class="site-main">
 			<?php $title = 1; get_template_part('template-parts/warranty');?>
 			<?php $title = 1; get_template_part('template-parts/order-form-section');?>
