@@ -172,7 +172,12 @@ var  jqXHR = jQuery.get("https://propuska-mkad-ttk-sk.ru/wp-json/lscrm/v2/number
 							// }
 
 							let dc = element.deycount;
-						if (( element.sys_status == "Действует") || ( element.sys_status ==  "Заканчивается завтра") || ( element.sys_status ==  "Заканчивается сегодня")) {
+							if (( element.sys_status == "Действует") 
+							|| ( element.sys_status ==  "Заканчивается завтра") 
+							|| ( element.sys_status ==  "Заканчивается сегодня")
+							|| ( element.sys_status ==  "Начинается сегодня")
+							|| ( element.sys_status ==  "Начинается завтра")
+							) {
 							RezStr += "<tr class='bg-green'>";
 						} else if (element.status == "Аннулирован") {
 							RezStr += "<tr class='bg-red'>";
