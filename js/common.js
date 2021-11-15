@@ -61,22 +61,43 @@ jQuery(document).ready(function ($) {
 
   jQuery(".uniSendBtn").click(function(e){ 
   		e.preventDefault();
+
+		  
       var formid = jQuery(this).data("formid");
       var message = jQuery(this).data("mailmsg");
-      console.log(formid);
-      var name = jQuery(this).siblings('input[name="name"]').val();
-	  console.log(name);
+      
+	  var name = jQuery(this).siblings('input[name="name"]').val();
+	  
+	  var mail = jQuery(this).siblings('input[name="mail"]');
+	  
+		if (mail.length != 0) {
+	  
+			if (mail.val() == "") {
+				jQuery(this).siblings('input[name="mail"]').css("background-color","#ff91a4");
+				return;
+			}
+			mail = mail.val();
+
+		} else {
+			mail = "";
+		}
+	 
       var phone = jQuery(this).siblings('input[type=tel]').val();
       if ((jQuery(this).siblings('input[type=tel]').val() == "")||(jQuery(this).siblings('input[type=tel]').val().indexOf("_")>0)) {
         jQuery(this).siblings('input[type=tel]').css("background-color","#ff91a4");
       } else {
+		console.log(message);
+		console.log(name);
+		console.log(mail);
+		console.log(phone);
         var  jqXHR = jQuery.post(
           allAjax.ajaxurl,
           {
             action: 'universal_send',    
             nonce: allAjax.nonce,
-            formid: formid,
+            formid: message,
             name: name,
+			ml:mail,
             tel: phone
           }
           
@@ -84,7 +105,7 @@ jQuery(document).ready(function ($) {
         
         
         jqXHR.done(function (responce) {
-          
+          console.log("do");
           jQuery('#messgeModal #lineMsg').html("Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.");
           jQuery('#messgeModal').arcticmodal();
           $('#order-callback').arcticmodal('close');
@@ -92,7 +113,8 @@ jQuery(document).ready(function ($) {
         });
         
         jqXHR.fail(function (responce) {
-          jQuery('#messgeModal #lineIcon').html('');
+		  console.log("no do");
+		  jQuery('#messgeModal #lineIcon').html('');
           jQuery('#messgeModal #lineMsg').html("Произошла ошибка! Попробуйте позднее.");
           jQuery('#messgeModal').arcticmodal();
         });

@@ -177,7 +177,7 @@ function universal_send() {
       );
     
       add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-      if (wp_mail(carbon_get_theme_option( 'mkad_email_send' ), 'Заказ с сайта', '<strong>С какой формы:</strong> '.$_REQUEST["formid"].'<br/> <strong>Имя:</strong> '.$_REQUEST["name"].' <br/> <strong>Телефон:</strong> '.$_REQUEST["tel"], $headers))
+      if (wp_mail(carbon_get_theme_option( 'mkad_email_send' ), 'Заказ с сайта', '<strong>С какой формы:</strong> '.$_REQUEST["formid"].'<br/> <strong>Имя / Гос.номер:</strong> '.$_REQUEST["name"].' <br/> <strong>Телефон:</strong> '.$_REQUEST["tel"]. '<br/> <strong>Email:</strong> '.$_REQUEST["ml"], $headers))
         wp_die("<span style = 'color:green;'>Мы свяжемся с Вами в ближайшее время.</span>");
       else wp_die("<span style = 'color:red;'>Сервис недоступен попробуйте позднее.</span>");
       

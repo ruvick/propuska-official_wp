@@ -33,25 +33,28 @@
 						<?php if(is_page(array(5,7,9)) && !empty(carbon_get_post_meta($post->ID, 'tech_get_result'))):?>
 							<div class="checking__info-form-desc"><?php echo carbon_get_post_meta($post->ID, 'tech_get_result')?></div>
 						<?php else:?>
-						<div class="checking__info-form-desc">Проверка пропуска займет не более 15 сек. Вся информация подгружается с официального сайта Департамента транспорта
+						<div class="checking__info-form-desc">Проверка пропуска займет не более 15 сек. Вся информация подгружается с официального сайта <br/>Департамента транспорта
 						</div>
 					<?php endif;?>
 					</form>
 				</div>
 			</div>
-			<!-- <div class="checking__form">
+
+			<div class="checking__form">
 
 				<form class="checking__form-container form__container">
-					<h3 class="checking__form-heading">Подключите круглосуточный контроль пропусков бесплатно на 365 дней</h3>
+					<h3 class="checking__form-heading">Подключите уведомление по пропускам на вашу почту и телефон</h3>
 					
-					<div class="form__fields" id = "checform" >
-						<input type="text" name="inv_number" class="form__fields-item uniFormName" placeholder="Гос номер" required autocomplete="off">
+					
+						<input type="text" name="name" class="form__fields-item uniFormName" placeholder="Гос номер" required autocomplete="off">
+						<input type="email" name="mail" class="form__fields-item uniFormMail" placeholder="e-mail*" required autocomplete="off">
 						<input type="tel" name="phone_number" class="form__fields-item mascedtel uniFormTel" placeholder="Введите номер телефона" required autocomplete="off">
-					</div>
-					<div class="form__action">
-						<div class="checking__form-btn form__action-btn action-btn uniSendBtn" data-formid = "checform" data-mailmsg = "Форма - рядом с проверкой пропуска">Подключить контроль пропуска</div>
-					</div>
+				
+					
+						<div class="checking__form-btn form__action-btn action-btn uniSendBtn" data-formid = "checform" data-mailmsg = "Форма - рядом с проверкой пропуска">Подключить</div>
+					
 				</form>
-			</div> -->
+			</div>
+
 		</div>
 	</section> <!-- /.checking -->
