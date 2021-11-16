@@ -67,7 +67,22 @@ jQuery(document).ready(function ($) {
       var message = jQuery(this).data("mailmsg");
       
 	  var name = jQuery(this).siblings('input[name="name"]').val();
-	  var gn = jQuery(this).siblings('input[name="gn"]').val();
+	  
+	  var gn = jQuery(this).siblings('input[name="gn"]');
+	  
+	  
+		if (gn.length != 0) {
+	  
+			if (gn.val() == "") {
+				jQuery(this).siblings('input[name="gn"]').css("background-color","#ff91a4");
+				return;
+			}
+			gn = gn.val();
+
+		} else {
+			gn = "";
+		}
+
 	  
 	  var mail = jQuery(this).siblings('input[name="mail"]');
 	  
