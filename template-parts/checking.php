@@ -46,7 +46,7 @@
 					<h3 class="checking__form-heading">Подключите уведомление по пропускам на вашу почту и телефон</h3>
 					
 					
-						<input type="text" name="name" class="form__fields-item uniFormName" placeholder="Гос номер" required autocomplete="off">
+						<input type="text" name="gn" class="form__fields-item uniFormName" placeholder="Гос номер" required autocomplete="off">
 						<input type="email" name="mail" class="form__fields-item uniFormMail" placeholder="e-mail*" required autocomplete="off">
 						<input type="tel" name="phone_number" class="form__fields-item mascedtel uniFormTel" placeholder="Введите номер телефона" required autocomplete="off">
 				

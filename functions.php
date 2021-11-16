@@ -176,8 +176,19 @@ function universal_send() {
         'content-type: text/html',
       );
     
+	  $mail_content = '<strong>С какой формы:</strong> ' . $_REQUEST["formid"];
+
+	  if (!empty($_REQUEST["name"]))
+		  $mail_content .= '<br/> <strong>Имя:</strong> ' . $_REQUEST["name"];
+	  if (!empty($_REQUEST["ml"]))
+		  $mail_content .= '<br/> <strong>e-mail:</strong> ' . $_REQUEST["ml"];
+	  if (!empty($_REQUEST["tel"]))
+		  $mail_content .= '<br/> <strong>Телефон:</strong> ' . $_REQUEST["tel"];
+	  if (!empty($_REQUEST["gn"]))
+		  $mail_content .= '<br/> <strong>Госномер:</strong> ' . $_REQUEST["gn"];
+
       add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-      if (wp_mail(carbon_get_theme_option( 'mkad_email_send' ), 'Заказ с сайта', '<strong>С какой формы:</strong> '.$_REQUEST["formid"].'<br/> <strong>Имя / Гос.номер:</strong> '.$_REQUEST["name"].' <br/> <strong>Телефон:</strong> '.$_REQUEST["tel"]. '<br/> <strong>Email:</strong> '.$_REQUEST["ml"], $headers))
+      if (wp_mail(carbon_get_theme_option( 'mkad_email_send' ), 'Заказ с сайта', $mail_content, $headers))
         wp_die("<span style = 'color:green;'>Мы свяжемся с Вами в ближайшее время.</span>");
       else wp_die("<span style = 'color:red;'>Сервис недоступен попробуйте позднее.</span>");
       

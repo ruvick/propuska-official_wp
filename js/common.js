@@ -67,6 +67,7 @@ jQuery(document).ready(function ($) {
       var message = jQuery(this).data("mailmsg");
       
 	  var name = jQuery(this).siblings('input[name="name"]').val();
+	  var gn = jQuery(this).siblings('input[name="gn"]').val();
 	  
 	  var mail = jQuery(this).siblings('input[name="mail"]');
 	  
@@ -98,6 +99,7 @@ jQuery(document).ready(function ($) {
             formid: message,
             name: name,
 			ml:mail,
+			gn:gn,
             tel: phone
           }
           
